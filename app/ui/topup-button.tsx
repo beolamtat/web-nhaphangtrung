@@ -8,12 +8,12 @@ function TopupButtonInner() {
 
   const handleTopup = useCallback(() => {
     const payload = {
-      access_token: searchParams.get("access_token") || "",
       game_id: searchParams.get("game_id") || "180419",
       server_id: searchParams.get("server_id") || "23001",
       server_name: searchParams.get("server_name") || "Bích Dao",
       role_id: searchParams.get("role_id") || "6474205939321801742",
       role_name: searchParams.get("role_name") || "Rufuif",
+      return_url: "https://www.nhaphangtrung.com/",
     };
 
     if (window.ReactNativeWebView?.postMessage) {
