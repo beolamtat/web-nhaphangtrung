@@ -1,9 +1,9 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, Suspense } from "react";
 
-export default function TopupButton() {
+function TopupButtonInner() {
   const searchParams = useSearchParams();
 
   const handleTopup = useCallback(() => {
@@ -37,5 +37,13 @@ export default function TopupButton() {
       <span className="text-[18px]">💰</span>
       Nạp ngay
     </button>
+  );
+}
+
+export default function TopupButton() {
+  return (
+    <Suspense fallback={null}>
+      <TopupButtonInner />
+    </Suspense>
   );
 }
