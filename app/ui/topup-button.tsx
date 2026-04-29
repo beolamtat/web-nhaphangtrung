@@ -7,25 +7,14 @@ function TopupButtonInner() {
   const searchParams = useSearchParams();
 
   const handleTopup = useCallback(() => {
-    const payload = {
-      game_id: searchParams.get("game_id") || "180419",
-      server_id: searchParams.get("server_id") || "23001",
-      server_name: searchParams.get("server_name") || "Bích Dao",
-      role_id: searchParams.get("role_id") || "6474205939321801742",
-      role_name: searchParams.get("role_name") || "Rufuif",
-      return_url: "https://www.nhaphangtrung.com/",
-    };
+    const game_id = searchParams.get("game_id") || "1000316";
+    const role_id = searchParams.get("role_id") || "";
+    const role_name = searchParams.get("role_name") || "";
+    const server_id = searchParams.get("server_id") || "";
+    const server_name = searchParams.get("server_name") || "";
 
-    if (window.ReactNativeWebView?.postMessage) {
-      window.ReactNativeWebView.postMessage(
-        JSON.stringify({
-          screen: "Topupscreens",
-          params: payload,
-        })
-      );
-    } else {
-      console.error("ReactNativeWebView is not available");
-    }
+    const params = new URLSearchParams({ game_id, role_id, role_name, server_id, server_name });
+    window.location.href = `gamota://topup?${params.toString()}`;
   }, [searchParams]);
 
   return (
