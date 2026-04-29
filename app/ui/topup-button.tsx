@@ -15,9 +15,14 @@ function TopupButtonInner() {
 
     const params = new URLSearchParams({ game_id, role_id, role_name, server_id, server_name });
     const url = `gamota://topup?${params.toString()}`;
+
+    console.log("[TopupButton] params:", { game_id, role_id, role_name, server_id, server_name });
+    console.log("[TopupButton] deep link url:", url);
+
     const a = document.createElement("a");
     a.href = url;
     a.click();
+    console.log("[TopupButton] anchor clicked");
   }, [searchParams]);
 
   return (
