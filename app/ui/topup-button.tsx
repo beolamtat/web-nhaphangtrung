@@ -14,7 +14,10 @@ function TopupButtonInner() {
     const server_name = searchParams.get("server_name") || "Chiến Linh S1007";
 
     const params = new URLSearchParams({ game_id, role_id, role_name, server_id, server_name });
-    window.location.href = `gamota://topup?${params.toString()}`;
+    const url = `gamota://topup?${params.toString()}`;
+    const a = document.createElement("a");
+    a.href = url;
+    a.click();
   }, [searchParams]);
 
   return (
