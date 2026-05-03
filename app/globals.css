@@ -7,8 +7,8 @@
   --muted: #70737d;
   --brand: #e52336;
   --brand-deep: #bf1126;
-  --font-ui-stack: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
-  --font-display-stack: "Arial Black", "Avenir Next Condensed", sans-serif;
+  --font-ui-stack: "Inter", "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-display-stack: "Inter", "Arial Black", sans-serif;
 }
 
 @theme inline {

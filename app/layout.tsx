@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { CartProvider } from "./lib/cart-context";
 
 export const metadata: Metadata = {
-  title: "TM",
-  description:
-    "Trang thương mại điện tử lấy cảm hứng từ Tmall, đã được Việt hóa giao diện bằng Next.js App Router.",
+  title: "beolamtat",
+  description: "beolamtat",
 };
 
 export default function RootLayout({
@@ -15,9 +13,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi">
-      <body>
-        <CartProvider>{children}</CartProvider>
-      </body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
