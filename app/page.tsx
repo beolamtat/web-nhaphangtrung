@@ -48,8 +48,8 @@ export default function Page() {
   };
 
   return (
-    <main className="w-full bg-black min-h-screen overflow-hidden">
-      <section className="h-screen w-full relative">
+    <main className="w-full bg-black h-[100dvh] overflow-hidden fixed inset-0">
+      <section className="h-[100dvh] w-full relative">
         <motion.div
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -67,9 +67,9 @@ export default function Page() {
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4"
           />
           <div className="absolute inset-0 noise-overlay opacity-[0.7] mix-blend-overlay pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-transparent pointer-events-none" />
           
-          <div className="absolute bottom-8 left-8 md:bottom-12 md:left-12 z-10 max-w-[85vw] md:max-w-2xl">
+          <div className="absolute top-8 left-8 md:top-12 md:left-12 z-10 max-w-[85vw] md:max-w-2xl">
             <div className="text-[#DEDBC8] text-sm md:text-base lg:text-lg font-mono tracking-wider leading-relaxed">
               <span className="text-gray-500 mr-3 opacity-50">~</span>
               <Typewriter 
