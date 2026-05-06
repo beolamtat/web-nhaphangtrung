@@ -3,6 +3,41 @@
 import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
+declare global {
+  interface Window {
+    ReactNativeWebView?: {
+      postMessage: (message: string) => void;
+    };
+  }
+}
+
+// Fake data để test bridge
+const FAKE_TOPUP_PARAMS = {
+  access_token: "fake_token_abc123xyz",
+  role_id: "12345",
+  role_name: "TestUser",
+  server_id: "S1",
+  server_name: "Server 1",
+  game_id: "game_001",
+  userid: "user_999",
+};
+
+function openTopup(): void {
+  if (!window.ReactNativeWebView?.postMessage) {
+    console.error("[Bridge] ReactNativeWebView is not available");
+    alert("[DEV] ReactNativeWebView chưa sẵn sàng\n" + JSON.stringify(FAKE_TOPUP_PARAMS, null, 2));
+    return;
+  }
+
+  const payload = {
+    screen: "Topupscreens",
+    params: FAKE_TOPUP_PARAMS,
+    gamgameId: "CP202507",
+  };
+
+  window.ReactNativeWebView.postMessage(JSON.stringify(payload));
+}
+
 function Typewriter({ text, speed = 80, resetTrigger }: { text: string; speed?: number; resetTrigger: number }) {
   const [displayedChars, setDisplayedChars] = useState(0);
 
@@ -79,6 +114,29 @@ export default function Page() {
               />
             </div>
           </div>
+
+          {/* Nút Nạp */}
+          <motion.button
+            id="btn-nap-tien"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={openTopup}
+            className="absolute bottom-8 right-8 md:bottom-12 md:right-12 z-10 flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-white text-sm md:text-base cursor-pointer"
+            style={{
+              background: "linear-gradient(135deg, #ff0036 0%, #cc0028 100%)",
+              boxShadow: "0 0 24px rgba(255,0,54,0.5), 0 4px 16px rgba(0,0,0,0.4)",
+            }}
+          >
+            <motion.span
+              animate={{ scale: [1, 1.3, 1] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              className="w-2 h-2 rounded-full bg-white/80 inline-block"
+            />
+            Nạp tiền
+          </motion.button>
         </motion.div>
       </section>
     </main>
