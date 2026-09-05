@@ -1,5 +1,6 @@
 import Image from "next/image";
 import HeritageMotion from "./HeritageMotion";
+import HeritageAura from "./HeritageAura";
 import { ArrowDown, ArrowRight } from "lucide-react";
 
 export default function Hero() {
@@ -8,6 +9,7 @@ export default function Hero() {
       <div className="heritage-landscape scene-parallax" data-depth="2">
         <Image src="/images/heritage-river-evening-v3.webp" alt="Tranh thủy mặc núi non, đình cổ và dòng sông trong ánh chiều vàng" fill preload sizes="100vw" />
       </div>
+      <HeritageAura />
       <HeritageMotion />
       <div className="hero-copy">
         <div className="eyebrow"><span className="heritage-line" /> TINH HOA NGUỒN HÀNG · VẸN TRÒN CHỮ TÍN</div>

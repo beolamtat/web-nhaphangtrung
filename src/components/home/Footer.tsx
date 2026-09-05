@@ -5,7 +5,6 @@ const footerLinks = [
   ["Đặt hàng", "#dat-hang"],
   ["Quy trình", "#cach-hoat-dong"],
   ["Hành trình", "#hanh-trinh"],
-  ["Tra cứu", "#theo-doi-don"],
 ];
 
 export function Footer() {

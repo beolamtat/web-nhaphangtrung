@@ -121,7 +121,7 @@ export default function DashboardPreview() {
                 <h4>
                   {tab === "Đơn hàng" ? "Đơn hàng của bạn" : "Đơn hàng gần đây"}
                 </h4>
-                <a href="#theo-doi-don">
+                <a href="#hanh-trinh">
                   Tra cứu hành trình <ArrowUpRight size={14} />
                 </a>
               </div>
@@ -192,7 +192,7 @@ export default function DashboardPreview() {
                     <p>{n.detail}</p>
                     <time>{n.time}</time>
                   </div>
-                  <a href="#theo-doi-don" aria-label={`Xem ${n.title}`}>
+                  <a href="#hanh-trinh" aria-label={`Xem ${n.title}`}>
                     <ArrowUpRight size={18} />
                   </a>
                 </article>

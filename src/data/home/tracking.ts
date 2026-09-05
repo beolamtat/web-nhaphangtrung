@@ -1,3 +1,4 @@
+/** Demo shipment used by the journey map. Illustrative, not live carrier data. */
 export const demoOrder = {
   id: "NHT-2026-3821",
   status: "Đang vận chuyển về Việt Nam",
@@ -5,84 +6,71 @@ export const demoOrder = {
   packages: "3 kiện",
   destination: "Hà Nội",
   updated: "05/09/2026 · 08:45",
-  steps: [
-    {
-      label: "Đã đặt hàng",
-      location: "1688 · Nhà cung cấp",
-      time: "01/09 · 09:12",
-      state: "done",
-    },
-    {
-      label: "Nhà cung cấp giao kho",
-      location: "Quảng Châu",
-      time: "02/09 · 14:30",
-      state: "done",
-    },
-    {
-      label: "Kho Trung Quốc nhận hàng",
-      location: "Kho CN-01 · Đã kiểm đếm",
-      time: "03/09 · 10:20",
-      state: "done",
-    },
-    {
-      label: "Xuất kho Trung Quốc",
-      location: "Nam Ninh · Chuyến NHT-08",
-      time: "04/09 · 16:05",
-      state: "done",
-    },
-    {
-      label: "Đang về Việt Nam",
-      location: "Hữu Nghị → Hà Nội",
-      time: "05/09 · 08:45",
-      state: "active",
-    },
-    {
-      label: "Giao khách hàng",
-      location: "Hà Nội · Chờ bàn giao",
-      time: "Dự kiến 06–07/09",
-      state: "pending",
-    },
-  ],
 };
+
+/**
+ * Road route Quảng Châu → Hà Nội. Coordinates are plotted in the map's
+ * lon/lat frame (103–116°E, 17,5–25,5°N) so the stops sit where they belong.
+ */
 export const checkpoints = [
   {
-    city: "Quảng Châu",
     code: "CN / 01",
-    status: "Nhà cung cấp bàn giao",
-    time: "02/09 · 14:30",
-    x: 80,
-    y: 90,
-  },
-  {
-    city: "Kho Trung Quốc",
-    code: "CN / 02",
-    status: "Đã kiểm đếm 3 kiện",
+    city: "Quảng Châu",
+    cn: "广州",
+    x: 951,
+    y: 168,
+    status: "Nhận hàng & kiểm đếm",
+    detail:
+      "Kho NHT Quảng Châu nhận hàng từ nhà cung cấp, đếm đủ số kiện, chụp ảnh thực tế và đóng gói lại trước khi lên chuyến.",
     time: "03/09 · 10:20",
-    x: 225,
-    y: 170,
+    leg: "Điểm khởi hành",
   },
   {
-    city: "Cửa khẩu",
+    code: "CN / 02",
+    city: "Nam Ninh",
+    cn: "南宁",
+    x: 489,
+    y: 189,
+    status: "Ghép chuyến, xuất kho",
+    detail:
+      "Hàng được ghép cùng các đơn khác lên chuyến xe NHT-08 chạy thẳng hướng biên giới Lạng Sơn.",
+    time: "04/09 · 16:05",
+    leg: "≈ 570 km · 1 ngày",
+  },
+  {
     code: "CN → VN",
-    status: "Đang vận chuyển về Việt Nam",
+    city: "Hữu Nghị",
+    cn: "友谊关",
+    x: 342,
+    y: 238,
+    status: "Thông quan cửa khẩu",
+    detail:
+      "Khai báo hải quan, kiểm hoá và sang xe Việt Nam ngay tại cửa khẩu Hữu Nghị, Lạng Sơn.",
     time: "05/09 · 08:45",
-    x: 390,
-    y: 130,
+    leg: "≈ 230 km · 6 giờ",
   },
   {
-    city: "Hà Nội",
     code: "VN / 01",
-    status: "Chờ tiếp nhận tại kho",
+    city: "Hà Nội",
+    cn: "河内",
+    x: 263,
+    y: 313,
+    status: "Về kho Việt Nam",
+    detail:
+      "Kho Hà Nội đối soát mã vận đơn, cân lại thực tế và chốt cước trước khi chia tuyến giao.",
     time: "Dự kiến 06/09",
-    x: 540,
-    y: 270,
+    leg: "≈ 170 km · 4 giờ",
   },
   {
-    city: "Khách hàng",
     code: "VN / 02",
-    status: "Chờ giao hàng",
+    city: "Giao tận nơi",
+    cn: "送货上门",
+    x: 205,
+    y: 405,
+    status: "Giao đến tận tay bạn",
+    detail:
+      "Nội thành Hà Nội giao trong 24 giờ; các tỉnh thành khác 1–3 ngày qua đối tác vận chuyển.",
     time: "Dự kiến 06–07/09",
-    x: 690,
-    y: 330,
+    leg: "Toàn quốc",
   },
 ];

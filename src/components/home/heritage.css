@@ -30,6 +30,11 @@ html{scroll-behavior:auto}.step-track svg{left:0;top:-10px;transition:none;anima
 
 /* A living shanshui scroll: compositor-only ornament movement. */
 .heritage-atmosphere{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:2;contain:paint}
+.heritage-aura{position:absolute;inset:0;z-index:2;pointer-events:none;contain:strict;opacity:0;animation:aura-fade-in 1.6s ease .3s forwards}
+.heritage-aura canvas{display:block;width:100%!important;height:100%!important}
+@keyframes aura-fade-in{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.heritage-aura{display:none}}
+
 .ink-cloud{position:absolute;width:340px;color:#a38756;opacity:.28;right:8%;top:16%}
 .ink-cloud-1{top:56%;right:27%;width:260px;opacity:.2}
 .drifting-petal{position:absolute;top:24%;left:67%;width:11px;height:7px;border-radius:85% 10% 75% 15%;background:#a3453b;opacity:0}
@@ -295,18 +300,20 @@ html{scroll-behavior:auto}.step-track svg{left:0;top:-10px;transition:none;anima
 /* Antique route atlas. */
 .parchment-map{background:#efe5d0;border-color:#bca071;color:#3c4036;box-shadow:0 18px 45px #44351e10;outline:1px solid #d8c29c;outline-offset:-7px}
 .parchment-map .map-toolbar{border-color:#cbb38b;color:#715a3e;background:#eee1ca}.parchment-map .map-toolbar small{color:#947e5e}
-.trade-map-canvas{position:relative;overflow:hidden}.trade-map-canvas>svg{display:block;width:100%;height:auto;max-height:520px}
-.atlas-country{font:24px var(--serif);letter-spacing:6px;fill:#7b7968;opacity:.65}.atlas-city{font:11px var(--serif);fill:#4c4e42}.atlas-sea{font:10px var(--font-vietnam);letter-spacing:4px;fill:#82917e}.atlas-note{font:8px var(--font-vietnam);letter-spacing:1.4px;fill:#937b56}
+.trade-map-canvas{position:relative}.trade-map-scroll{overflow:hidden}.trade-map-scroll>svg{display:block;width:100%;height:auto}
+.atlas-country{font:26px var(--serif);letter-spacing:7px;fill:#7b7968;opacity:.6}.atlas-country-vn{font-size:21px;letter-spacing:4px}.atlas-city{font:13px var(--serif);fill:#3f4238}.atlas-city-cn{font:11px serif;fill:#9a7b52;letter-spacing:2px}.atlas-sea{font:11px var(--font-vietnam);letter-spacing:5px;fill:#7f9084}.atlas-island{font:9px var(--font-vietnam);letter-spacing:3px;fill:#8b8b74}.atlas-border{font:8px var(--font-vietnam);letter-spacing:2px;fill:#9a8258}.atlas-lane{font:8px var(--font-vietnam);letter-spacing:2px;fill:#78897f}.atlas-scale text{font:8px var(--font-vietnam);letter-spacing:1px}.atlas-legend text{font:10px var(--font-vietnam);fill:#6f5c3d;dominant-baseline:middle}.atlas-note{font:8px var(--font-vietnam);letter-spacing:1.4px;fill:#937b56}.atlas-archipelago-name{font:9px var(--font-vietnam);letter-spacing:2px;fill:#6f7d72}.atlas-inset-note{font:7px var(--font-vietnam);letter-spacing:1.6px;fill:#94886c}
+/* The selected stop lifts off the paper instead of only changing colour. */
+.atlas-stop text{transition:fill .2s}.atlas-stop.is-active .atlas-city{fill:#963d30}.atlas-stop.is-active>circle:first-child{animation:atlas-halo 2.6s ease-in-out infinite}@keyframes atlas-halo{50%{opacity:.5;stroke-width:2.2}}@media(prefers-reduced-motion:reduce){.atlas-stop.is-active>circle:first-child{animation:none}}
 .atlas-carrier{filter:drop-shadow(0 4px 5px #3c2c1f33)}
-.map-motion-toggle{position:absolute;right:16px;bottom:14px;display:flex;align-items:center;gap:7px;min-height:38px;padding:8px 11px;border:1px solid #b69766;background:#f6eddce8;color:#704f34;font:9px var(--font-vietnam);cursor:pointer}.map-motion-toggle:focus-visible{outline:2px solid #963d30;outline-offset:2px}
-.parchment-map .checkpoint-tabs{border-color:#c9b185;background:#f4ead7}.parchment-map .checkpoint-tabs button{color:#71644f;border-color:#d1bb94}.parchment-map .checkpoint-tabs button.active{background:#963d30;color:#fff5e5}.parchment-map .checkpoint-detail{background:#343b32;border-color:#596153}.parchment-map .journey-bottom{border-color:#cbb38b;color:#806d50}
+.map-motion-toggle{position:absolute;right:16px;top:14px;display:flex;align-items:center;gap:7px;min-height:38px;padding:8px 11px;border:1px solid #b69766;background:#f6eddce8;color:#704f34;font:9px var(--font-vietnam);cursor:pointer}.map-motion-toggle:focus-visible{outline:2px solid #963d30;outline-offset:2px}
+.parchment-map .checkpoint-tabs{border-color:#c9b185;background:#f4ead7}.parchment-map .checkpoint-tabs button{color:#71644f;border-color:#d1bb94}.parchment-map .checkpoint-tabs button.active{background:#963d30;color:#fff5e5}.parchment-map .checkpoint-tabs button.active span{color:#f0cba0}.parchment-map .checkpoint-detail{background:#343b32;border-color:#596153}.parchment-map .checkpoint-detail strong{color:#f3ead4;font-family:var(--serif);font-size:17px}.parchment-map .checkpoint-detail div>span{color:#a9b39c}.parchment-map .checkpoint-detail p{color:#cbd2be}.parchment-map .checkpoint-code{background:#2b322a;border-color:#7d6a49;color:#e0c48d}.parchment-map .checkpoint-leg{border-left:1px solid #56604f;color:#e0c48d}.parchment-map .journey-bottom{border-color:#cbb38b;color:#806d50}
 @media(prefers-reduced-motion:no-preference){.atlas-carrier{animation:carrier-pulse 2.4s ease-in-out infinite}}@keyframes carrier-pulse{50%{filter:drop-shadow(0 5px 8px #963d3066)}}
 
 @media(max-width:760px){
  .trade-stages{grid-template-columns:repeat(2,1fr);margin-top:30px}.trade-stage{min-height:170px;padding:20px}.trade-stage:nth-child(2){border-right:0}.trade-stage:nth-child(-n+2){border-bottom:1px solid #d7c6a7}.stage-glyph{font-size:42px;margin:20px 0 11px}
  .stage-panel{align-items:flex-start;flex-direction:column;padding:22px 20px}.stage-copy{display:block}.stage-copy>span{display:block;margin-bottom:9px}.stage-copy p{font-size:12px}
  .service-scroll-layout{grid-template-columns:1fr;margin-top:30px}.service-scroll-art{min-height:410px;border-right:0;border-bottom:1px solid #c7ad7e}.service-medallion{width:150px;height:150px}.service-seal{font-size:68px}.service-art-caption h3{font-size:23px}.service-accordion{padding-inline:19px}.service-entry h3 button{font-size:17px;padding-block:18px}
- .trade-map-canvas>svg{min-height:290px}.map-motion-toggle span{display:none}.map-motion-toggle{width:38px;justify-content:center}.atlas-city{font-size:10px}
+ .trade-map-scroll{overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin} .trade-map-scroll>svg{min-width:860px} .parchment-map .checkpoint-detail{flex-wrap:wrap}.parchment-map .checkpoint-leg{flex-basis:100%;padding:14px 0 0;border-left:0;border-top:1px solid #56604f} .map-motion-toggle span{display:none}.map-motion-toggle{width:38px;justify-content:center} .atlas-country{font-size:22px}.atlas-country-vn{font-size:18px}
 }
 @media(max-width:430px){.trade-stage{min-height:157px;padding:16px}.trade-stage strong{font-size:15px}.stage-count{font-size:7px}.stage-glyph{font-size:37px}.service-scroll-art{min-height:370px}.checkpoint-tabs{overflow-x:auto;scrollbar-width:none}.checkpoint-tabs button{min-width:112px}}
 

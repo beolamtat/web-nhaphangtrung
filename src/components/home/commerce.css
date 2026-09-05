@@ -559,7 +559,7 @@
 }
 .journey-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.65fr) minmax(340px, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
   align-items: start;
 }
@@ -652,8 +652,8 @@
 .checkpoint-detail {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 25px 22px;
+  gap: 22px;
+  padding: 24px 22px;
   min-height: 105px;
 }
 .checkpoint-code {
@@ -678,10 +678,21 @@
   color: #9999a1;
   margin-top: 7px;
 }
-.checkpoint-detail .barcode {
-  flex: 0 0 46px;
-  color: #66666b;
-  height: 28px;
+.checkpoint-detail p {
+  font-size: 12px;
+  line-height: 1.85;
+  margin-top: 9px;
+  max-width: 74ch;
+}
+.checkpoint-leg {
+  flex: 0 0 auto;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  padding-left: 22px;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 .journey-bottom {
   padding: 18px 22px;
@@ -1196,7 +1207,6 @@
     gap: 35px;
   }
   .journey-layout {
-    grid-template-columns: minmax(0, 1fr) 340px;
     gap: 16px;
   }
   .map-toolbar {

@@ -43,7 +43,7 @@ export default function Navbar() {
           {[
             ["Trang chủ", "#"],
             ["Đặt hàng", "#dat-hang"],
-            ["Tra hành trình", "#theo-doi-don"],
+            ["Tra hành trình", "#hanh-trinh"],
             ["Hướng dẫn", "#cach-hoat-dong"],
           ].map(([label, url]) => (
             <a key={label} href={url} onClick={() => setOpen(false)}>
