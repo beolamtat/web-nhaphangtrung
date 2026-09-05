@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Nhập Hàng Trung</title>
+  <g fill="none" stroke="#963d30" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M10 8.5 54 7l1.5 47L9 56Z" stroke-width="3"/>
+    <path d="M14 13 50.5 11.5 51 50 13 51.5Z" stroke-width="1.5" opacity=".72"/>
+    <path d="M19 22.5h26v19H19Z" stroke-width="4"/>
+    <path d="M32 14.5v36M19 32h26" stroke-width="4"/>
+  </g>
+</svg>

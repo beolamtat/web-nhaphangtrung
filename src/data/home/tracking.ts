@@ -1,0 +1,88 @@
+export const demoOrder = {
+  id: "NHT-2026-3821",
+  status: "Đang vận chuyển về Việt Nam",
+  weight: "12,5 kg",
+  packages: "3 kiện",
+  destination: "Hà Nội",
+  updated: "05/09/2026 · 08:45",
+  steps: [
+    {
+      label: "Đã đặt hàng",
+      location: "1688 · Nhà cung cấp",
+      time: "01/09 · 09:12",
+      state: "done",
+    },
+    {
+      label: "Nhà cung cấp giao kho",
+      location: "Quảng Châu",
+      time: "02/09 · 14:30",
+      state: "done",
+    },
+    {
+      label: "Kho Trung Quốc nhận hàng",
+      location: "Kho CN-01 · Đã kiểm đếm",
+      time: "03/09 · 10:20",
+      state: "done",
+    },
+    {
+      label: "Xuất kho Trung Quốc",
+      location: "Nam Ninh · Chuyến NHT-08",
+      time: "04/09 · 16:05",
+      state: "done",
+    },
+    {
+      label: "Đang về Việt Nam",
+      location: "Hữu Nghị → Hà Nội",
+      time: "05/09 · 08:45",
+      state: "active",
+    },
+    {
+      label: "Giao khách hàng",
+      location: "Hà Nội · Chờ bàn giao",
+      time: "Dự kiến 06–07/09",
+      state: "pending",
+    },
+  ],
+};
+export const checkpoints = [
+  {
+    city: "Quảng Châu",
+    code: "CN / 01",
+    status: "Nhà cung cấp bàn giao",
+    time: "02/09 · 14:30",
+    x: 80,
+    y: 90,
+  },
+  {
+    city: "Kho Trung Quốc",
+    code: "CN / 02",
+    status: "Đã kiểm đếm 3 kiện",
+    time: "03/09 · 10:20",
+    x: 225,
+    y: 170,
+  },
+  {
+    city: "Cửa khẩu",
+    code: "CN → VN",
+    status: "Đang vận chuyển về Việt Nam",
+    time: "05/09 · 08:45",
+    x: 390,
+    y: 130,
+  },
+  {
+    city: "Hà Nội",
+    code: "VN / 01",
+    status: "Chờ tiếp nhận tại kho",
+    time: "Dự kiến 06/09",
+    x: 540,
+    y: 270,
+  },
+  {
+    city: "Khách hàng",
+    code: "VN / 02",
+    status: "Chờ giao hàng",
+    time: "Dự kiến 06–07/09",
+    x: 690,
+    y: 330,
+  },
+];

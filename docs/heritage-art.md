@@ -1,0 +1,7 @@
+# Tranh sơn thủy
+
+Generated using the built-in image_gen tool. Final asset: `public/images/heritage-landscape.png`. Used as the responsive homepage hero, with secondary crops in services and final CTA. Font: locally hosted Noto Serif with Vietnamese support.
+
+## Generation prompt
+
+Use case: historical-scene. Asset type: premium website hero artwork, not a website screenshot. Create an exquisite traditional Chinese shan shui ink and watercolor landscape on warm ivory rice paper (#f3eee3). Very wide landscape 3:2 composition. A poetic ancient Chinese river trading journey: towering misty mountains in delicate gray green ink, elegant Song dynasty riverside pavilion with curved tile roofs at the right side, aged pine branches at far right, a small traditional wooden merchant junk with muted cinnabar red sails in the lower middle river, distant stone bridge, tiny birds. Main composition is clustered in the right 65 percent; left 35 percent is almost blank warm ivory mist fading to paper for integration into a page. Restrained red sun in the upper middle distance. Masterful fine dry-brush details and subtle ink blooms, tactile handmade paper, museum quality Chinese scroll painting, sophisticated quiet historical atmosphere. Colors: warm ivory, charcoal ink, muted sage, touches of cinnabar red and ochre. No modern objects, no text, no calligraphy, no border, no watermark, no interface, no gradients looking digital. Beautiful evocative intricate painting, not cartoon, not flat vector.
