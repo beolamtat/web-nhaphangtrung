@@ -64,27 +64,26 @@ export default function ProductLinkInput() {
             </span>
           ))}
           <span className="secure">
-            <Shield /> Kết nối đơn giản. Chi phí rõ ràng.
+            <CheckCircle2 size={13} /> Kết nối đơn giản. Chi phí rõ ràng.
           </span>
         </div>
+        {/* One line at a time: recognition while typing, the verdict after submit. */}
         <div className="input-feedback" aria-live="polite">
-          {market && (
-            <p className="input-status">
-              <CheckCircle2 size={15} /> Đã nhận diện sản phẩm từ {market.name}
-            </p>
-          )}
-          {submitted && (
+          {submitted ? (
             <p className="input-status">
               {market
                 ? "Link đã được nhận diện. Đây là bản demo; giá sản phẩm và đơn hàng chưa được xử lý tự động."
-                : "Link chưa hợp lệ. Vui lòng sử dụng URL sản phẩm từ Taobao, 1688, Tmall hoặc Pinduoduo."}{" "}
+                : "Link chưa hợp lệ. Vui lòng sử dụng URL sản phẩm từ Taobao, 1688, Tmall hoặc Pinduoduo."}
             </p>
+          ) : (
+            market && (
+              <p className="input-status">
+                <CheckCircle2 size={15} /> Đã nhận diện sản phẩm từ {market.name}
+              </p>
+            )
           )}
         </div>
       </form>
     </section>
   );
-}
-function Shield() {
-  return <CheckCircle2 size={13} />;
 }

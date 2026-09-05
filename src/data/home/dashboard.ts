@@ -36,7 +36,7 @@ export const dashboardOrders = [
 export const notifications = [
   {
     title: "Đơn #3821 đã xuất kho Trung Quốc",
-    time: "08:45 · 05/09",
+    time: "16:05 · 04/09",
     detail: "3 kiện hàng đang trên hành trình về Hà Nội.",
   },
   {

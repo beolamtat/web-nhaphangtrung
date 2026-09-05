@@ -103,7 +103,7 @@ export default function LogisticsJourney() {
             <span className="eyebrow red">02 / HÀNH TRÌNH TRONG TẦM TAY</span>
             <h2>Vạn dặm giao thương.<br /><span className="muted">Từng chặng trong tầm mắt.</span></h2>
           </div>
-          <p>Bốn chặng đường bộ từ Quảng Châu về Hà Nội.<br />Chọn một điểm dừng để xem việc gì diễn ra ở đó.</p>
+          <p>Năm điểm dừng, từ Quảng Châu đến tận tay bạn.<br />Chọn một điểm để xem việc gì diễn ra ở đó.</p>
         </Reveal>
 
         <div className="journey-layout" data-motion="journey">
@@ -209,7 +209,7 @@ export default function LogisticsJourney() {
                 <g className="atlas-legend" transform="translate(48 56)">
                   <rect width="196" height="74" fill="#f4ecd9d9" stroke="#c9ae82" />
                   <path d="M16 28h34" stroke="#983e30" strokeWidth="2.4" strokeLinecap="round" />
-                  <text x="60" y="32">Đường bộ · 4–6 ngày</text>
+                  <text x="60" y="32">Đường bộ · 3–5 ngày</text>
                   <path d="M16 54h34" stroke="#7d8f86" strokeWidth="1.6" strokeDasharray="2 8" strokeLinecap="round" />
                   <text x="60" y="58">Đường biển · 7–10 ngày</text>
                 </g>
@@ -262,8 +262,8 @@ export default function LogisticsJourney() {
             </div>
 
             <div className="journey-bottom">
-              <span>≈ 1.150 km đường bộ</span>
-              <span>4–6 ngày dự kiến</span>
+              <span>≈ 970 km đường bộ</span>
+              <span>3–5 ngày dự kiến</span>
               <span>Chuyển động minh hoạ, không phải GPS trực tiếp</span>
             </div>
           </div>

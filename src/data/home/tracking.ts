@@ -1,11 +1,8 @@
-/** Demo shipment used by the journey map. Illustrative, not live carrier data. */
+/** Demo shipment shown in the journey map toolbar. Illustrative, not live carrier data. */
 export const demoOrder = {
   id: "NHT-2026-3821",
-  status: "Đang vận chuyển về Việt Nam",
-  weight: "12,5 kg",
   packages: "3 kiện",
-  destination: "Hà Nội",
-  updated: "05/09/2026 · 08:45",
+  weight: "12,5 kg",
 };
 
 /**
